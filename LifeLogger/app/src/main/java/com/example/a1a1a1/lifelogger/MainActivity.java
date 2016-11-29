@@ -34,12 +34,15 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         new TedPermission(this)
+
                 .setPermissionListener(permissionlistener)
                 .setRationaleMessage("구글 로그인을 하기 위해서는 주소록 접근 권한이 필요해요")
                 .setDeniedMessage("취소하셨습니다. [설정] > [권한] 에서 권한을 다시 허용할 수 있어요.")
                 .setPermissions(Manifest.permission.READ_CONTACTS)
                 .check();
+
         setContentView(R.layout.activity_main);
 
 

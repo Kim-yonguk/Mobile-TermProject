@@ -2,11 +2,20 @@ package com.example.a1a1a1.lifelogger;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
+
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class DBManager extends SQLiteOpenHelper {
+
+
+
 
     public DBManager(Context context, String name, CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -35,23 +44,49 @@ public class DBManager extends SQLiteOpenHelper {
         db.close();
     }
 
+
     public void delete(String _query) {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL(_query);
         db.close();
     }
 
+    public long getProfilesCount() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        long cnt  = DatabaseUtils.queryNumEntries(db, "FOOD_LIST");
+/*
+        GoogleMap gmap;
+        MarkerOptions marker;
+
+        Cursor cursor = db.rawQuery("select * from FOOD_LIST", null);
+
+        while(cursor.moveToNext())
+        {
+            Double a=cursor.getDouble(1);
+            Double b=cursor.getDouble(2);
+
+            LatLng pinmark = new LatLng(a,b);
+            marker = new MarkerOptions().position(pinmark);
+            gmap.addMarker(marker);
+
+        }*/
+        db.close();
+        return cnt;
+    }
+
     public String PrintData() {
         SQLiteDatabase db = getReadableDatabase();
+        long cnt  = DatabaseUtils.queryNumEntries(db, "FOOD_LIST");
         String str = "";
 
         Cursor cursor = db.rawQuery("select * from FOOD_LIST", null);
+
         while(cursor.moveToNext()) {
-            str += cursor.getInt(0)
+            str +=  cursor.getInt(0)
                     + " : 위도 = "
                     + cursor.getDouble(1)
                     + ", 경도 = "
-                    + cursor.getInt(2)
+                    + cursor.getDouble(2)
                     + ", 년도 = "
                     + cursor.getInt(3)
                     + ", 월 = "

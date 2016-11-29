@@ -75,4 +75,6 @@ public class AnalysisActivity extends FragmentActivity {
     public void backaway(View v){
         finish();
     }
+
+
 }
