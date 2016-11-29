@@ -17,6 +17,9 @@ import java.util.ArrayList;
 public class MainActivity extends Activity {
 
 
+    static ArrayList<Double> arr_latitude = new ArrayList<>();
+    static ArrayList<Double> arr_longtitude = new ArrayList<>();
+
 
     PermissionListener permissionlistener = new PermissionListener() {
         @Override

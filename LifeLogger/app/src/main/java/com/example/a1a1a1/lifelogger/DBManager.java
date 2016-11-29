@@ -50,6 +50,15 @@ public class DBManager extends SQLiteOpenHelper {
         db.execSQL(_query);
         db.close();
     }
+    public void mapinsert(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from FOOD_LIST",null);
+        while(cursor.moveToNext()) {
+            MainActivity.arr_latitude.add(cursor.getDouble(1));
+            MainActivity.arr_longtitude.add(cursor.getDouble(2));
+        }
+        db.close();
+    }
 
     public long getProfilesCount() {
         SQLiteDatabase db = this.getReadableDatabase();
