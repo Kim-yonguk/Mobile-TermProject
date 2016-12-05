@@ -9,7 +9,7 @@
     <ImageView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:background="@drawable/kakao3"
+        android:background="@drawable/ca3"
         android:id="@+id/imageView"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
@@ -24,8 +24,7 @@
         android:onClick="onClick_event"
         android:layout_above="@+id/btn_my"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="64dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="100dp"
