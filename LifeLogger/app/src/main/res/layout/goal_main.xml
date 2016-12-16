@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/whi"
+    android:weightSum="1">
+
+    <TextView
+        android:text="나의 목표"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/MyGoal"
+        android:textColor="#2766a5"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:text="1.단어 외우기"
+        android:layout_width="wrap_content"
+        android:textColor="#2766a5"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/MyGoal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="42dp"
+        android:id="@+id/Goal1" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2766a5"
+        android:layout_alignBottom="@+id/Goal1"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/Goal1_count" />
+
+    <Button
+        android:text="+"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/MyGoal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="38dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginTop="29dp"
+        android:id="@+id/btn_goal1"
+        android:onClick="onclick_01" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Goal2_count"
+
+        android:inputType="number"
+        android:textColor="#2766a5"
+        android:layout_alignBaseline="@+id/Goal2"
+        android:layout_alignBottom="@+id/Goal2"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Goal3"
+        android:inputType="number"
+        android:textColor="#2766a5"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/Goal3_count" />
+
+    <Button
+        android:text="초기화"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_clear"
+        android:layout_alignBaseline="@+id/MyGoal"
+        android:layout_alignBottom="@+id/MyGoal"
+        android:layout_toRightOf="@+id/Goal2"
+        android:layout_toEndOf="@+id/Goal2"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:onClick="onclick_reset" />
+
+    <Button
+        android:text="+"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_goal3"
+        android:onClick="onclick_03"
+        android:layout_alignBaseline="@+id/Goal3_count"
+        android:layout_alignBottom="@+id/Goal3_count"
+        android:layout_alignLeft="@+id/btn_goal2"
+        android:layout_alignStart="@+id/btn_goal2" />
+
+    <Button
+        android:text="+"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_goal2"
+        android:onClick="onclick_02"
+        android:layout_alignBaseline="@+id/Goal2_count"
+        android:layout_alignBottom="@+id/Goal2_count"
+        android:layout_alignLeft="@+id/btn_goal1"
+        android:layout_alignStart="@+id/btn_goal1" />
+
+    <Button
+        android:text="저장"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/MyGoal"
+        android:layout_toRightOf="@+id/Goal1_count"
+        android:layout_toEndOf="@+id/Goal1_count"
+        android:id="@+id/btn_save" />
+
+    <TextView
+        android:text="3.알고리즘 문제 풀기"
+
+        android:textColor="#2766a5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:id="@+id/Goal3"
+        android:layout_below="@+id/btn_goal2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="2.하루에 3km 뛰기"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textColor="#2766a5"
+        android:layout_marginTop="68dp"
+        android:id="@+id/Goal2"
+        android:layout_below="@+id/btn_goal1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="결과확인"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btn_save"
+        android:layout_alignLeft="@+id/btn_goal1"
+        android:layout_alignStart="@+id/btn_goal1"
+        android:id="@+id/btn_result"
+        android:onClick="onclickResult" />
+
+    <TextView
+        android:id="@+id/Count_result"
+        android:textColor="#2766a5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_goal3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp" />
+</RelativeLayout>

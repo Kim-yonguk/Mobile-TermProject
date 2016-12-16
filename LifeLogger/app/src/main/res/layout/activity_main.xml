@@ -51,6 +51,7 @@
         android:layout_height="60dp"
         android:text="목표 관리"
         android:id="@+id/btn_my"
+        android:onClick="onClick_goal"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
