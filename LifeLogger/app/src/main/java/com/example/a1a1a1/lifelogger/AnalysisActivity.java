@@ -1,5 +1,7 @@
 package com.example.a1a1a1.lifelogger;
 
+import android.support.v4.app.FragmentActivity;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -7,12 +9,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
  * Created by 1a1a1 on 2016-11-25.
  */
 public class AnalysisActivity extends FragmentActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

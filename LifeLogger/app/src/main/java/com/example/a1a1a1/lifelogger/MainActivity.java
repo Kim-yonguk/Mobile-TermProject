@@ -21,6 +21,11 @@ public class MainActivity extends Activity {
     static ArrayList<Double> arr_longtitude = new ArrayList<>();
 
 
+    static ArrayList<Double> arr_month = new ArrayList<>();
+    static ArrayList<Double> arr_day = new ArrayList<>();
+
+
+    /*
     PermissionListener permissionlistener = new PermissionListener() {
         @Override
         public void onPermissionGranted() {
@@ -34,10 +39,11 @@ public class MainActivity extends Activity {
 
 
     };
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+/*
         new TedPermission(this)
 
                 .setPermissionListener(permissionlistener)
@@ -45,7 +51,7 @@ public class MainActivity extends Activity {
                 .setDeniedMessage("취소하셨습니다. [설정] > [권한] 에서 권한을 다시 허용할 수 있어요.")
                 .setPermissions(Manifest.permission.READ_CONTACTS)
                 .check();
-
+*/
         setContentView(R.layout.activity_main);
 
 
@@ -63,6 +69,11 @@ public class MainActivity extends Activity {
     public void onClick_stats(View v){
         Intent intent_analysis=new Intent(getApplicationContext(), AnalysisActivity.class);
         startActivity(intent_analysis);
+    }
+
+    public void onClick_goal(View v){
+        Intent intent_goal=new Intent(getApplicationContext(), GoalActivity.class);
+        startActivity(intent_goal);
     }
 
 
